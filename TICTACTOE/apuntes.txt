@@ -1,0 +1,7 @@
+El tres en raya es una tabla de 3x3
+en el que las casillas son botones,
+cuando el jugador x clicka en un boton,
+pasa a mostrar una x con un value y el boton pasa a disable
+para que el otro jugador no pueda volver a clicarlo.
+todo esto transcurre en una sesion para llevar el control
+de la partida.

@@ -1,0 +1,63 @@
+EMPTY:
+determina si una variable esta vacía.
+Devuelve true si la variable no existe o está vacía o es nula.
+Es decir solo da false si contiene un valor.
+
+Es decir, empty() sería un (!isset($var) || $var == false )
+
+empty da true si no existe o tiene los siguientes valores:
+
+"" (una cadena vacía)
+0 (0 como un integer)
+0.0 (0 como un float)
+"0" (0 como un string)
+null
+false
+array() (un array vacío)
+
+
+ISSET:
+determina si una variable esta definida y no es null.
+Devuelve true si la variable existe y no es null.
+Es por ello que para isset, las variables vacias anteriores
+si existes, si devuelven true.
+
+$v = false;
+
+$r = isset($v);
+echo $r;
+
+En este caso, v si existe a pesar de ser vacia.
+
+/*Cuando se imprime el valor de retorno de una
+función que retorna un boolean, al hacer echo se
+muestra como:
+1 si es true,
+cadena vacia si es false.
+
+Es por ello que al imprimir una funcion que retorna
+false, no se imprime nada, ya que es una cadena vacia
+
+<?php
+function is_blank($value) {
+    return empty($value) && !is_numeric($value);
+
+    /*amabas condiciones deben ser true
+    para devolver true. En el momento en que
+    una de ellas no se cumple,devuelve false.*/
+}
+
+$v = "0";
+if(is_blank($v)){
+    echo "is blanck";
+}else{
+    echo "no";
+}
+
+/*este caso devuelve false porque es true
+que se considera vacio pero es false que no sea
+numerico.*/
+
+
+
+?>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="file" name="fichero" value="fichero"/>
+        <br><br>
+        <input type="submit" name="submit" value="Procesar" />
+
+    </form>
+</body>
+</html>
+
+ <?php
+ print_r($_FILES);
+ 
+if(isset($_POST['submit'])){
+    
+    if($_FILES['fichero']['error'] != 0){
+        $error = "Se ha producido un error de carga";
+    }else{
+        if (!is_dir('imagenes/')) {
+            mkdir('imagenes/', 0777, true);
+        }
+        move_uploaded_file($_FILES['fichero']['tmp_name'],'imagenes/'. $_FILES['fichero']['name']);
+        $fichero = fopen('imagenes/'. $_FILES['fichero']['name'],'r');
+        echo fread($fichero, filesize('imagenes/'. $_FILES['fichero']['name']));
+
+        // while(! feof($fichero)){
+        //     echo fgets($fichero) . '<br>';
+        // }
+
+       
+
+    }
+    fclose($fichero);
+}
+
+?> 

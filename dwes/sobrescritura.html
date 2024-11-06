@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo de document.write</title>
+</head>
+<body onload="alert(`la pagina ha sido cargada`)">
+    <!-- onload="escribir()" es un evento que se ejecuta despues de la carga por lo 
+     que si ejecuta un document.write, se sobrescribe-->
+    <h1>Este es un título</h1>
+    <button onclick=escribir()>Haz clic para escribir</button>
+    <!-- La etiqueta button de html te inserta un boton que se visualiza en el navegador -->
+    <!-- Los eventos onclick y onload son eventos de javascript-->
+    <!-- Cuando el usuario clica en el boton html se lama a la funcion, en este caso
+     a la función escribir().
+     document.write() solo se debe usar durante la fase de carga de la página. Si se usa después, 
+     como en el caso de un onclick, sobrescribe todo el contenido del documento porque vuelve a 
+     crear el contenido del documento desde cero.
+     -->
+     <!--Document.write sobrescirbe el contenido cuando esta dentro de un evento como un onlick que es
+     despues de la carga-->
+     <!-- la funcion se puede escribir sin comillas o con comillas-->
+
+    <script>
+        function escribir() {
+            document.write("¡Hola, mundo!");
+        }
+    </script>
+
+</body>
+
+<!--Se dispara cuando toda la página web (incluyendo imágenes, scripts y hojas de estilo) se han cargado completamente.
+Este evento ocurre de manera automática cuando la página termina de cargarse, no requiere de una acción del usuario -->
+
+
+<br>
+<p>
+    Los flamencos son aves gregarias altamente especializadas, que habitan sistemas salinos de donde obtienen su
+    alimento (compuesto generalmente de algas microscópicas e invertebrados) y materiales para desarrollar sus hábitos
+    reproductivos.*
+</p>
+
+
+</body>
+
+</html>

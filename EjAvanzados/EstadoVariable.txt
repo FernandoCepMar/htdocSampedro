@@ -1,0 +1,29 @@
+POSIBLES ESTADOS DE UNA VARIABLES EN PHP:
+
+1-No declarada (undefined):
+la variable no ha sido declarada,se usa una
+variable que no existe.
+
+2-Declarada sin valor asignado (también undefined):
+Se declara una variable pero sin asignarle un valor.
+$variableSinValor;
+echo $variableSinValor; // Notice: Undefined variable
+
+3-Asignada a null: La variable existe, esta declarada pero es null.
+$variableNull = null;
+echo $variableNull; // No muestra nada, pero no genera aviso
+NULL en un if se considera false.
+
+4-booleano,la variable se asigna a false o true.
+
+5-Asignada a un valor vacío: 
+como "" para cadenas,
+[] para arrays,
+ 0 como número entero o flotante.
+Estos se evalúan como false en un contexto booleano(dentro de un if).
+$cadenaVacia = "";
+$arrayVacio = [];
+$numeroCero = 0;
+
+6-Asignada a un valor (cualquier tipo): Una variable puede tener un valor de cualquier tipo en PHP: 
+cadena (string), número entero (int), número flotante (float), array (array), objeto (object), recurso (resource), etc.

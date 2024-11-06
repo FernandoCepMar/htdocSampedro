@@ -1,0 +1,24 @@
+form{
+    display: flex;
+    height: 100vh;
+    /*si el body no ocupa
+    toda la pagina, no se pone
+    en el centro de ella, la altura de esta
+    le restringe*/
+align-items: center;
+}
+.tablero{
+    border: solid green 10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    /*hay 3 columnas, como hay 9 elementos, se agrupan en 3*/
+    width: 500px;
+    height: 500px;
+    margin: auto;
+}
+
+.tablero input[type = 'button']{
+   flex-grow: 0;
+   flex-shrink: 0;
+   flex-basis: 300px;
+}
