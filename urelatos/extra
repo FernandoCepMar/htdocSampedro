@@ -1,0 +1,69 @@
+<?php
+
+function contactoCompleto($array){
+foreach($array as $dato){
+    if(empty($dato)){
+        return false;
+    }
+}
+return true;
+}
+
+if(isset($_POST['submit'])){
+    echo "<pre>";
+    print_r($_POST);
+    echo "</pre>";
+    if(contactoCompleto($_POST)){
+        imprimir();
+    }
+}
+
+function imprimir(){
+    foreach($_POST as $dato){
+      if(gettype($dato) == "string"){
+        echo $dato ;
+      }elseif(gettype($dato) =="array"){
+      foreach($dato as $tipo){
+        echo $tipo;
+      }
+      }
+      echo "<br>";
+    }
+}
+
+define('AGENDA_FILE', 'agenda.txt');
+
+
+function guardarAgenda($agenda) {
+    $file = fopen(AGENDA_FILE, 'w');
+    foreach ($agenda as $contacto) {
+        $line = $contacto['nombre'] . '|' . implode(',', $contacto['telefono']) . '|' . $contacto['email'] . '|' . $contacto['fecha'] . "\n";
+        fwrite($file, $line);
+    }
+    fclose($file);
+}
+
+
+function cargarAgenda() {
+    $agenda = [];
+    if (file_exists(AGENDA_FILE)) {
+        $file = fopen(AGENDA_FILE, 'r');
+        while (($line = fgets($file)) !== false) {
+            $data = explode('|', trim($line));
+            $agenda[] = [
+                'nombre' => $data[0],
+                'telefono' => explode(',', $data[1]),
+                'email' => $data[2],
+                'fecha' => $data[3]
+            ];
+        }
+        fclose($file);
+    }
+    return $agenda;
+}
+
+
+$agenda = cargarAgenda(); -->
+
+   value = "<?php value("passwd");?>"
+     value = "<?php value("nombre");?>"
