@@ -1,0 +1,23 @@
+los metodos magicos son siempre publicos
+
+a la hora de copiar los objetos,
+no se puede usar = 
+$objetoAlmacen = $objetoAcopiar;
+si se usa igual (=), no se está almacenando
+el objetoAcopiar en la variable objetoAlmacen
+sino que se está guardando en este su
+referencia en la memoria.
+De esta manera se tienen dos variables
+objeto que hacen referencia al mismo
+espacio de memoria. lo que provoca que
+si se modifica el objetoAlmacen, esas 
+modificaciones tambien afecta a objetoAcopiar.
+
+Para que esto no suceda, se usa clone().
+
+con el metodo magico __clone, cada vez que
+el objeto se clone, se puede usar para
+aumentar el numero , la cantidad de 
+objetos que se han clonado de ese objeto y
+se incrementara su codigo,id para que los
+clones tengan diferente id.
