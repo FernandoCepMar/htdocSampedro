@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,7 +19,7 @@ pantallaError.textContent = " <?php echo $error ; ?>" ;
 			<h1>uRelatos Login</h1>
 			<div class="form-group">
 			<span id="mensajes" style="background-color: LightCoral;">
-    
+            <?php if(isset($error)) echo $error; ?>
 
 			</span>
 			</div>
